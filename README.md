@@ -21,28 +21,31 @@ pip install devops-automation
 ### Container Management
 
 ```python
-from devops_automation import container_manager
+from devops import ContainerManager
 
-# Example usage
-container_manager.deploy_container('docker', 'my-container')
+#example
+manager = ContainerManager()
+manager.create_container('nginx', 'web_server')
 ```
 
 ### CI/CD Pipeline Configuration
 
 ```python
-from devops_automation import ci_cd_manager
+from devops import CICDPipeline
 
 # Example usage
-ci_cd_manager.setup_pipeline('my-pipeline')
+pipeline = CICDPipeline('github')
+pipeline.generate_pipeline('python', 'pytest', 'deploy.sh')
 ```
 
 ### Infrastructure as Code
 
 ```python
-from devops_automation import infrastructure_manager
+from devops import TerraformConfig
 
 # Example usage
-infrastructure_manager.deploy_infrastructure('terraform', 'my-infrastructure')
+config = TerraformConfig('aws_instance', 'web_instance', {'ami': 'ami-12345678', 'instance_type': 't2.micro'})
+config.generate_config()
 ```
 
 ## Contributing
@@ -55,5 +58,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-For any inquiries or issues, please contact us at [support@devops-automation.com](mailto:support@devops-automation.com).
+For any inquiries or issues, please contact us at []().
 
